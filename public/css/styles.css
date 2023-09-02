@@ -1,0 +1,255 @@
+.xl-text {
+  font-size: 75px;
+}
+
+.btn-outline-secondary {
+  color: var(--bs-secondary);
+}
+
+.btn-outline-secondary:hover {
+  color: #fff;
+}
+
+.header .decoration-star {
+  top: 80px;
+  left: -200px;
+  width: 500px;
+  opacity: 0.7;
+}
+
+.header .decoration-star-2 {
+  top: 80px;
+  right: -200px;
+  width: 500px;
+  opacity: 0.7;
+}
+
+.navbar {
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar-sticky {
+  background: #fff;
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.details .decoration-star {
+  left: -200px;
+  width: 500px;
+}
+
+.details-2 .decoration-star {
+  right: -200px;
+  width: 500px;
+}
+
+.contact .decoration-star {
+  left: -300px;
+  width: 600px;
+}
+
+.to-top-btn {
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background-color: #44434a;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.to-top-btn:hover {
+  background-color: #1d1d21;
+}
+
+.to-top-btn img {
+  margin-bottom: 0.25rem;
+  width: 18px;
+}
+
+.show {
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .xl-text {
+    font-size: 50px;
+  }
+  .navbar .btn-outline-secondary {
+    margin-top: 20px;
+  }
+  .header {
+    margin-top: 0px !important;
+    text-align: center;
+  }
+  .header .decoration-star {
+    left: -100px;
+    width: 250px;
+  }
+  .header .decoration-star-2 {
+    right: -100px;
+    width: 250px;
+  }
+  .header .image-container {
+    margin-top: 30px;
+  }
+  .services .col-md-4 {
+    border-bottom: 1px #ccc solid;
+    margin: 10px 0;
+  }
+  .details-2 {
+    margin-top: 20px !important;
+  }
+  .details-2 .decoration-star {
+    top: 300px;
+  }
+}
+
+/* .sierra {
+  color:rgb(17, 17, 99);
+  font-size: 30px;
+} */
+
+@media (max-width: 675px) {
+  .sierra {
+    font-size: 20px;
+  }
+  #search {
+    margin-left: 40px;
+    font-size: 15px;
+  }
+}
+
+#search {
+  margin-left: 40px;
+}
+/* .select-container {
+  display: flex;
+  justify-content: center;
+} */
+
+.search-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+
+/* Add this to your CSS stylesheet */
+.custom-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  margin: 0 auto;
+  padding: 8px;
+  border: 2px solid #3490dc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 80%;
+  max-width: 300px;
+  flex: 1;
+  margin-right: 8px;
+}
+
+
+/* Add this to your CSS stylesheet */
+
+
+.custom-select {
+  margin: 0 auto;
+  margin-left: 830px; /* Add this line to position to the extreme right */
+  padding: 10px;
+  border: 2px solid #3490dc; 
+  border-radius: 6px;
+  font-size: 16px;
+  width: 80%;
+  max-width: 300px;
+}
+
+@media (max-width: 768px){
+  .custom-select {
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #3490dc; 
+    border-radius: 6px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 300px;
+  }
+  }
+
+/* Slant effect for select on mobile */
+@media (max-width: 768px) {
+  .search-wrapper {
+      flex-direction: column;
+      align-items: flex-start; 
+  }
+
+  .custom-input {
+      width: 100%; /* Full width on mobile */
+      margin: 8px 0; /* Adjust margin as needed */
+  }
+  }
+
+/** Mobile view for the table**/
+@media (max-width: 640px) {
+  .container {
+      width: 100%;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+  }
+  .table-responsive {
+      overflow-x: auto;
+  }
+  table {
+      display: block;
+  }
+  th, td {
+  text-align: left;
+  padding: 0.5rem;
+  }
+  th:nth-child(1),
+  td:nth-child(1),
+  th:nth-child(2),
+  td:nth-child(2),
+  th:nth-child(3),
+  td:nth-child(3) {
+  display: block;
+  }
+  th:nth-child(2),
+  th:nth-child(3) {
+  display: none;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  /* background-color: #f5f5f5; */
+}
+
+.header img {
+  margin-right: 0px;
+  align-self: flex-start; /* Align the image at the top */  
+}
+
+.sierra {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+

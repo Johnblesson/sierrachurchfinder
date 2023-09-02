@@ -1,70 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sierra Church Finder</title>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/css/home.css">
-<style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/font-awesome.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="icon" href="images/search-house.png" />
+    <link rel="stylesheet" href="/css/footer.css">
+    <title>Sierra Church Finder</title>
 
-</style>
-
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">Sierra Church Finder</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">FAQ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
- <div class="row my-4">
-    <div class="col-md-8 offset-md-2">
-      <div class="input-group">
-        <input type="text" id="search" class="form-control" placeholder="Search by name, address, or contact">
-        <select id="locationSearch" class="form-select">
-          <option value="">Select Locations</option>
-        </select>
+    <!--Additional Styling-->
+    <!--Adding border radius to the favorites churches images-->
+    <style>img {border-radius: 20px;}</style>
+    <!--Removing underline from link -->
+    <style>a {text-decoration: none;}</style>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+      <div class="container">
+        <div class="header">
+          <a href="/home"><img src="images/search-house.png" alt="" width="40"></a>
+          <a href="/home"><h1 class="sierra">SIERRA CHURCH</h1></a>
       </div>
+        <!-- <div>
+        <a class="navbar-brand" href="/home">
+          <img src="images/search-house.png" alt="" width="50" />
+          <h1 class="sierra">SIERRA CHURCH</h1>
+        </a></div> -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/map">Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/churches">Churches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-outline-secondary px-4 mx-4"
+                href="/contact"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header position-relative mt-6 overflow-hidden">
+      <img
+        src="images/decoration-star.svg"
+        alt=""
+        class="decoration-star position-absolute"
+      />
+      <img
+        src="images/decoration-star.svg"
+        alt=""
+        class="decoration-star-2 position-absolute"
+      />
+      <div class="container position-relative z-3">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="mt-6">
+              <h1 class="xl-text">
+                The <span class="text-primary">Nearby</span> Church to visit
+              </h1>
+              <p class="lead mb-4">
+                Embark on a journey of spiritual discovery with our revolutionary Church Finder application. Welcome to a seamless way of connecting with places of worship that resonate with your beliefs and values. Whether you're seeking a new congregation to call home, exploring faith communities while traveling, or simply curious about the diverse spiritual tapestry around you, our Church Finder app opens doors to a world of possibilities.
+              </p>
+              <a href="/churches" class="btn btn-primary btn-lg m-2">
+                Find Church
+              </a>
+              <a href="/contact" class="btn btn-outline-secondary btn-lg m-2">
+                Contact Us
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="image-container">
+              <img src="images/header.png" alt="" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Introduction -->
+    <section id="introduction" class="intro bg-light py-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2 text-center">
+            <h2>
+              All <span class="text-secondary">Churches</span> In One
+              Space
+            </h2>
+            <p class="fs-5">
+              Immerse yourself in a digital sanctuary where you can effortlessly explore, connect, and engage with churches near and far. With our intuitive interface, personalized search options, and in-depth church profiles, you'll uncover a treasure trove of information to guide your choices.
+
+              Experience the joy of meaningful worship, forge new connections, and embark on a profound spiritual journey – all at your fingertips. Welcome to the future of finding your spiritual sanctuary. Welcome to Sierra Church Finder.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Details 1 -->
+    <section
+      id="details"
+      class="details position-relative my-6 overflow-hidden"
+    >
+      <img
+        src="images/decoration-star.svg"
+        alt=""
+        class="decoration-star position-absolute"
+      />
+      <div class="container position-relative z-3">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="image-container d-flex justify-content-center">
+              <img src="images/details-1.png" alt="" class="img-fluid" />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="mt-4">
+              <h2 class="mb-4">
+                How <span class="text-primary">To Use This</span> Application
+              </h2>
+              <ul class="list-unstyled">
+                <li class="d-flex mb-3">
+                  <i class="fas fa-check text-primary fa-2x mx-4"></i>
+                  <p>
+                    This application is very easy to use. Go to the Get Started or Church Finder. It will take you to a unique interface.
+                  </p>
+                </li>
+                <li class="d-flex mb-3">
+                  <i class="fas fa-check text-primary fa-2x mx-4"></i>
+                  <p>
+                    You can search by location and church name. We recommend you search by location. When you search by location or area, you eventually see all the churches in that area. 
+                  </p>
+                </li>
+                <li class="d-flex mb-3">
+                  <i class="fas fa-check text-primary fa-2x mx-4"></i>
+                  <p>
+                    If you know the name of the church you want to attend, just search for the name of the church, and all the keyword of what you typed will be listed.
+                  </p>
+                </li>
+                <li class="d-flex mb-3">
+                  <i class="fas fa-check text-primary fa-2x mx-4"></i>
+                  <p>
+                    After successful search you will see the name the church, address, location/area and most importantly an active contact to call for direction. 
+                  </p>
+                </li>
+                <li class="d-flex mb-3">
+                  <i class="fas fa-check text-primary fa-2x mx-4"></i>
+                  <p>
+                    When you finally see the church you want attend, copy the address and the location and paste it on the map for google map direction. 
+                  </p>
+                </li>
+              </ul>
+              <a href="/churches" class="btn btn-primary">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Quote -->
+    <section class="get-quote bg-light py-6 text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <h4 class="lh-base">
+              Experience the joy of meaningful worship, forge new connections, and embark on a profound spiritual journey – all at your fingertips. Welcome to the future of finding your spiritual sanctuary. Welcome to Church Finder.
+            </h4>
+            <a href="" class="btn btn-secondary btn-lg">Locate Worship Center</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Churches -->
+    <section id="projects" class="projects py-6">
+      <div class="container">
+        <h2 class="text-center pb-4">
+          Some Of Our <span class="text-secondary">Favorite Churches</span>
+        </h2>
+        <!-- Churches Row 1 -->
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <div class="card border-0">
+              <img src="images/zpt2.jpg" alt="" />
+              <div class="card-body">
+                <h5 class="card-title">Zion Praise Tabernacle</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolore, impedit.
+                  <a href="/churches">Read More</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0">
+              <img src="images/newlife1.jpg" alt="" />
+              <div class="card-body">
+                <h5 class="card-title">New Life Ministries International</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolore, impedit.
+                  <a href="/churches">Read More</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0">
+              <img src="images/zpt1.jpg" alt="" />
+              <div class="card-body">
+                <h5 class="card-title">Zion Praise Tabernacle</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolore, impedit.
+                  <a href="/churches">Read More</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Churches Row 2 -->
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <div class="card border-0">
+              <img src="images/zpt2.jpg" alt="" />
+              <div class="card-body">
+                <h5 class="card-title">Zion Praise Tabernacle</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolore, impedit.
+                  <a href="/churches">Read More</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0">
+              <img src="images/newlife2.jpg" alt="" />
+              <div class="card-body">
+                <h5 class="card-title">New Life Ministries International</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolore, impedit.
+                  <a href="/churches">Read More</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0">
+              <img src="images/lwf1.jpg" alt="" />
+              <div class="card-body">
+                <h5 class="card-title">Living Word Of Faith International Ministries</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dolore, impedit.
+                  <a href="/churches">Read More</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Footer -->
+  <section id="footer">
+    <div class="container">
+      <div class="row text-center text-xs-center text-sm-left text-md-left">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <h5>Quick links</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="/home"><i class="fa fa-angle-double-right"></i>Home</a></li>
+            <li><a href="/about"><i class="fa fa-angle-double-right"></i>About</a></li>
+            <li><a href="/faq"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+            <li><a href="/churches"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+            <li><a href="//home"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <h5>Quick links</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="/home"><i class="fa fa-angle-double-right"></i>Home</a></li>
+            <li><a href="/about"><i class="fa fa-angle-double-right"></i>About</a></li>
+            <li><a href="/faq"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+            <li><a href="churches"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+            <li><a href="/home"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <h5>Quick links</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="/home"><i class="fa fa-angle-double-right"></i>Home</a></li>
+            <li><a href="/about"><i class="fa fa-angle-double-right"></i>About</a></li>
+            <li><a href="/faq"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+            <li><a href="/churches"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+            <li><a href="https://kharisprotech.vercel.app" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Kharis pro-tech</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+          <ul class="list-unstyled list-inline social text-center">
+            <li class="list-inline-item"><a href="/home"><i class="fa fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="/home"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="/home"><i class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="/home"><i class="fa fa-google-plus"></i></a></li>
+            <li class="list-inline-item"><a href="/home" target="_blank"><i class="fa fa-envelope"></i></a></li>
+          </ul>
+        </div>
+        </hr>
+      </div>  
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+          <p class="h">Copyright &copy 2023<a class="text-green ml-2" href="https://kharisprotech.vercel.app" target="_blank">  Kharis pro-tech</a></p>
+        </div>
+        </hr>
+      </div>  
     </div>
-  </div>
+  </section>
+  <!-- ./Footer -->
 
-  <div class="table-responsive">
-    <table class="min-w-full divide-y divide-gray-200">
-      <thead class="bg-gray-50">
-        <tr>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Church</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contact</th>
-          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th>
-        </tr>
+    <button id="to-top" class="to-top-btn">
+      <img src="images/up-arrow.png" alt="" />
+    </button>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 
-      </thead>
-      <tbody id="tbody" class="bg-white divide-y divide-gray-200">
-        <!-- Table rows will be added here -->
-      </tbody>
-    </table>
-  </div>
-</div>
-<script src="/js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <!-- Brevo Conversations {literal} -->
+  <script>
+    (function(d, w, c) {
+        w.BrevoConversationsID = '64d16e3a70d0936f101f6bc7';
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'BrevoConversations');
+  </script>
+  <!-- /Brevo Conversations {/literal} -->
+  </body>
 </html>

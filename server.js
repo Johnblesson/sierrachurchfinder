@@ -39,6 +39,37 @@ app.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+// Home routes
+app.get('/home', (req, res) => {
+  res.render('home')
+  // res.send(users)
+})
+
+// Church Routes
+app.get('/churches', (req, res) => {
+  res.render('churches');
+});
+
+// FAQ Routes
+app.get('/faq', (req, res) => {
+  res.render('faq');
+});
+
+// About Routes
+app.get('/about', (req, res) => {
+  res.render('about');
+});
+
+// Contact Routes
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
+// Map Routes
+app.get('/map', (req, res) => {
+  res.render('map');
+});
+
 //Password hashing// Setting saltRounds to 10
 app.post('/signup', async (req, res) => {
   try {
