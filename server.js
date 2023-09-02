@@ -28,44 +28,44 @@ const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to database'));
 
-//Login routes
+//Login route
 app.get('/', (req, res) => {
     res.render('login')
     // res.send(users)
 })
 
-// Signup routes
+// Signup route
 app.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-// Home routes
+// Home route
 app.get('/home', (req, res) => {
   res.render('home')
   // res.send(users)
 })
 
-// Church Routes
+// Church Route
 app.get('/churches', (req, res) => {
   res.render('churches');
 });
 
-// FAQ Routes
+// FAQ Route
 app.get('/faq', (req, res) => {
   res.render('faq');
 });
 
-// About Routes
+// About Route
 app.get('/about', (req, res) => {
   res.render('about');
 });
 
-// Contact Routes
+// Contact Route
 app.get('/contact', (req, res) => {
   res.render('contact');
 });
 
-// Map Routes
+// Map Route
 app.get('/map', (req, res) => {
   res.render('map');
 });
