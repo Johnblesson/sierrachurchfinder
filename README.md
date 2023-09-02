@@ -1,2 +1,2 @@
 ## Sierra Church Finder
-## Application with users authentication
+__Application with users authentication__
