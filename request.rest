@@ -1,0 +1,12 @@
+GET http://localhost:3000/api/churches
+
+###
+POST http://localhost:3000/api/churches
+Content-Type: application/json
+{
+    "name": "Kingdom Gospel Mission",
+    "address": "14 Railway line",
+    "logo": "images/kgm.png" ,
+    "contact": "079969094" ,
+    "location": "Rokupa",
+}
