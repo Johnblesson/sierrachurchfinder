@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const hbs = require('hbs');
-const session = require('express-session'); // Add express-session
+const session = require('express-session');
 require('dotenv').config();
 
 // Bulit in Middleware
@@ -19,7 +19,7 @@ app.use(express.static('public'));
 
 // Add express-session middleware
 app.use(session({
-  secret: 'your-secret-key', // Replace with a secure secret
+  secret: 'your-secret-key',
   resave: false,
   saveUninitialized: true,
 }));

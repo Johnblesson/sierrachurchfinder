@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+
 const Church = require('../models/churches')
 const getChurch = require('../middleware/getChurch')
 
@@ -35,13 +36,6 @@ router.post('/', async (req, res) => {
     res.status(400).json({ message: err.message });
 }
 });
-    // try {
-    //     const newChurch = await churches.save()
-    //     res.status(201).json(newChurch)
-    // } catch (err) {
-    //     res.status(400).json({ message: err.message});
-    // }
-
 
 // Update A Church
 router.patch('/:id', getChurch, async (req, res) => {
