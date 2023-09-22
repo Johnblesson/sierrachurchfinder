@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const Church = require('../models/churches')
+const getChurch = require('../middleware/getChurch')
 
-router.get('/churches', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const churches = await Church.find()
         res.json(churches)
@@ -12,12 +13,12 @@ router.get('/churches', async (req, res) => {
     
 })
 
-router.get('/churches/:id', getChurch, (req, res) => {
+router.get('/:id', getChurch, (req, res) => {
     res.json(res.churches)
 })
 
 // Create A Church
-router.post('/churches', async (req, res) => {
+router.post('/', async (req, res) => {
   try {  
   const churches = {
     id: req.body.id,
@@ -43,7 +44,7 @@ router.post('/churches', async (req, res) => {
 
 
 // Update A Church
-router.patch('/churches/:id', getChurch, async (req, res) => {
+router.patch('/:id', getChurch, async (req, res) => {
     if (req.body.name != null) {
       res.churches.name = req.body.name
     }
@@ -68,7 +69,7 @@ router.patch('/churches/:id', getChurch, async (req, res) => {
   })
 
   // Deleting A Church
-router.delete('/churches/:id', getChurch, async (req, res) => {
+router.delete('/:id', getChurch, async (req, res) => {
     try {
       await res.churches.remove()
       res.json({ message: 'Church Deleted' })
@@ -77,20 +78,5 @@ router.delete('/churches/:id', getChurch, async (req, res) => {
     }
   })
 
-// Middleware
-async function getChurch(req, res, next) {
-    let church
-    try {
-        church = await Church.findById(req.params.id)
-        if (student == null) {
-            return res.status(404).json({ message: err.message })
-        }
-    } catch (err) {
-        return res.status(500).json({ message: 'Cannot find church'})
-    }
-
-    res.church = student
-    next()
-}
 
 module.exports = router

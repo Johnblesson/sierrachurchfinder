@@ -2,6 +2,10 @@ const { Router } = require('express');
 const router = Router();
 const bcrypt = require('bcrypt');
 const Credential = require('../models/credential');
+const authenticate = require('../middleware/auth')
+
+const TOKEN = process.env.TOKEN;
+
 // Login route
 router.get('/', (req, res) => {
     res.render('login')
@@ -11,37 +15,42 @@ router.get('/', (req, res) => {
   router.get('/signup', (req, res) => {
     res.render('signup');
   });
-  
-  // Home route
-  router.get('/home', (req, res) => {
-    res.render('home')
-    // res.send(users)
-  })
-  
-  // Church Route
-  router.get('/churches', (req, res) => {
-    res.render('churches');
-  });
-  
-  // FAQ Route
-  router.get('/faq', (req, res) => {
-    res.render('faq');
-  });
-  
-  // About Route
-  router.get('/about', (req, res) => {
-    res.render('about');
-  });
-  
-  // Contact Route
-  router.get('/contact', (req, res) => {
-    res.render('contact');
-  });
-  
-  // Map Route
-  router.get('/map', (req, res) => {
-    res.render('map');
-  });
+
+  // Home route (protected)
+router.get('/home', authenticate, (req, res) => {
+  res.render('home', { naming: `${req.session.user.name}` });
+});
+
+// Church Route (protected)
+router.get('/churches', authenticate, (req, res) => {
+  res.render('churches');
+});
+
+// FAQ Route (protected)
+router.get('/faq', authenticate, (req, res) => {
+  res.render('faq');
+});
+
+// About Route (protected)
+router.get('/about', authenticate, (req, res) => {
+  res.render('about');
+});
+
+// Contact Route (protected)
+router.get('/contact', authenticate, (req, res) => {
+  res.render('contact');
+});
+
+// Map Route (protected)
+router.get('/map', authenticate, (req, res) => {
+  res.render('map');
+});
+
+// Forbidden
+router.get('/forbidden', (req, res) => {
+  res.render('403')
+})
+
   
   // Logout route
   router.get('/logout', (req, res) => {
