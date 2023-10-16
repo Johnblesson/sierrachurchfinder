@@ -4,7 +4,7 @@ let locationSelect = document.getElementById("locationSearch");
 
 // Fetch function
 // fetch("https://sierrachurches1.onrender.com/churches")
-fetch("http://localhost:5002/api/churches")
+fetch("http://localhost:5000/api/churches")
     .then(res => res.json())
     .then(json => {
         const allData = json;
