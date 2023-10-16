@@ -25,8 +25,9 @@ app.use(session({
 }));
 
 // Create Database Connection
-const connectDB = require('./src/database/connection')
-connectDB();
+require('./src/database/connection')
+// const connectDB = require('./src/database/connection')
+// connectDB();
 
 // Routes
 const router = require('./src/routes/route')
